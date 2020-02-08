@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Check your prediction</title>
+</head>
+<body>
+<h2>Welcome to prediction service</h2>
+<p th:text="${'Today is '+ time}">TIME</p>
+
+<button>Get your prediction</button>
+<tr th:each="day : ${days}">
+    <td><span th:text="${day.id}"> Title </span></td>
+    <td><span th:text="${day.day_desc}"> Author </span></td>
+</tr>
+</body>
