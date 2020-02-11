@@ -5,12 +5,12 @@
     <title>Check your prediction</title>
 </head>
 <body>
-<h2>Welcome to prediction service</h2>
-<p th:text="${'Today is '+ time}">TIME</p>
-
-<button>Get your prediction</button>
-<tr th:each="day : ${days}">
-    <td><span th:text="${day.id}"> Title </span></td>
-    <td><span th:text="${day.day_desc}"> Author </span></td>
-</tr>
+<h1>Welcome to quote service. This wonderful service provides you motivating quotes for every day. </h1>
+<h3>Please select a day in dropdown menu beside and click button "Get your quote"</h3>
+<select name="day">
+    <option th:each="day : ${days}"
+            th:text="${day.day_desc}"/>
+</select>
+<button>Get your quote</button>
 </body>
+</html>

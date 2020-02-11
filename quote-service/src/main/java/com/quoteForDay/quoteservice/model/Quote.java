@@ -17,10 +17,13 @@ public class Quote {
 
     private String autor;
 
-    Quote(Long id, String quote,String autor) {
+    private int dayId;
+
+    Quote(Long id, String quote,String autor, int dayId) {
         this.id=id;
         this.quote=quote;
         this.autor=autor;
+        this.dayId=dayId;
     }
 
     Quote() {};
