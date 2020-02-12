@@ -12,11 +12,11 @@ public class Day {
 
         @Id
         @GeneratedValue(strategy = IDENTITY)
-        private Long id;
+        private int id;
 
         private String day_desc;
 
-        Day(Long id, String day_desc) {
+        Day(int id, String day_desc) {
             this.id=id;
             this.day_desc=day_desc;
         }

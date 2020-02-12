@@ -7,10 +7,13 @@
 <body>
 <h1>Welcome to quote service. This wonderful service provides you motivating quotes for every day. </h1>
 <h3>Please select a day in dropdown menu beside and click button "Get your quote"</h3>
+<form action="#" th:action="@{/form}" th:object="${daysForm}" method="post">
 <select name="day">
-    <option th:each="day : ${days}"
+    <option th:each="day : ${daysForm}"
+            th:value="${day.id}"
             th:text="${day.day_desc}"/>
 </select>
-<button>Get your quote</button>
+    <button type="submit" value="Submit"> Get your quote!</button>
+</form>
 </body>
 </html>
