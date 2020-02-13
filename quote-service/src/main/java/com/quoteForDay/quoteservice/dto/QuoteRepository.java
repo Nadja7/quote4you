@@ -13,7 +13,6 @@ public interface QuoteRepository extends JpaRepository<Quote, Long> {
 
     List<Quote> findAll();
 
-    List<Quote> findAllByDayId(Integer dayId);
 
 }
 
