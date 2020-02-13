@@ -15,21 +15,26 @@ public class ConvertingController {
     @Autowired
     QuoteServiceClient quoteServiceClient;
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-        public String packYourQuote(Model model) {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home() {
 
-        String quotes= quoteServiceClient.findAllQuotes();
-        model.addAttribute("quotes",quotes);
+        return "home";
+    }
 
-        File file = new File("text.txt");
+    @RequestMapping(value = "/pack", method = RequestMethod.GET)
+    public String packYourQuote(Model model) {
+
+        String quotes = quoteServiceClient.findAllQuotes();
+        model.addAttribute("quotes", quotes);
+
+        File file = new File("quotes.txt");
 
         try (Writer writer = new BufferedWriter(new FileWriter(file))) {
             String contents = quotes;
-            if(file.exists()){
-            writer.write(contents);
-            System.out.print("exists");
-                             }
-            else {
+            if (file.exists()) {
+                writer.write(contents);
+                System.out.print(" file exists");
+            } else {
                 file.createNewFile();
                 System.out.print("not exists");
             }
@@ -37,10 +42,10 @@ public class ConvertingController {
             e.printStackTrace();
         }
 
-        model.addAttribute("file",  file);
+        model.addAttribute("file", file);
         return "view";
 
-        }
-
     }
+
+}
 

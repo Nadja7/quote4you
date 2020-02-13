@@ -1,19 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Check your prediction</title>
 </head>
 <body>
 <h1>Welcome to quote service. This wonderful service provides you motivating quotes for every day. </h1>
 <h3>Please select a day in dropdown menu beside and click button "Get your quote"</h3>
-<form action="#" th:action="@{/form}" th:object="${daysForm}" method="post">
-<select name="day">
+<select>
+    <option value="">Select a day</option>
     <option th:each="day : ${daysForm}"
             th:value="${day.id}"
             th:text="${day.day_desc}"/>
 </select>
-    <button type="submit" value="Submit"> Get your quote!</button>
-</form>
+<a th:href="@{/generate}">Get your quote!</a>
 </body>
 </html>

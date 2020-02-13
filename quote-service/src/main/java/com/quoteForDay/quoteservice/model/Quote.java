@@ -1,6 +1,9 @@
 package com.quoteForDay.quoteservice.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -11,7 +14,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Quote {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String quote;
 
@@ -19,14 +22,17 @@ public class Quote {
 
     private int dayId;
 
-    Quote(Long id, String quote,String autor, int dayId) {
-        this.id=id;
-        this.quote=quote;
-        this.autor=autor;
-        this.dayId=dayId;
+    public Quote(Integer id, String quote, String autor, int dayId) {
+        this.id = id;
+        this.quote = quote;
+        this.autor = autor;
+        this.dayId = dayId;
     }
 
-    Quote() {};
+    public Quote() {
+    }
+
+
     @Override
     public String toString() {
         return String.format(
