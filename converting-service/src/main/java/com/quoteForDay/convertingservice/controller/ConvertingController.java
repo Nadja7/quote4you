@@ -1,6 +1,6 @@
 package com.quoteForDay.convertingservice.controller;
 
-import com.quoteForDay.convertingservice.service.QuoteServiceClient;
+import com.quoteForDay.convertingservice.service.QuoteServiceImpl;
 import com.quoteForDay.quoteservice.model.Quote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,9 +14,9 @@ import java.util.List;
 
 @Controller
 public class ConvertingController {
-
     @Autowired
-    QuoteServiceClient quoteServiceClient;
+    QuoteServiceImpl quoteService;
+
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {
@@ -28,7 +28,7 @@ public class ConvertingController {
 
     public String packYourQuote(Model model) {
         List<String> quotesToStrings = new ArrayList<>();
-        List<Quote> quotes = quoteServiceClient.findAllQuotes();
+        List<Quote> quotes = quoteService.findAllQuotes();
 
         for (Quote quote : quotes) {
             quotesToStrings.add(quote.toString());
