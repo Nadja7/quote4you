@@ -2,6 +2,8 @@ package com.quoteForDay.convertingservice.controller;
 
 import com.quoteForDay.convertingservice.service.QuoteServiceImpl;
 import com.quoteForDay.quoteservice.model.Quote;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,9 @@ import java.util.List;
 
 @Controller
 public class ConvertingController {
+
+    Logger logger = LoggerFactory.getLogger(ConvertingController.class);
+
     @Autowired
     QuoteServiceImpl quoteService;
 
@@ -41,10 +46,10 @@ public class ConvertingController {
                 for (String str : contents) {
                     writer.write(str + System.lineSeparator());
                 }
-                System.out.print(" file exists");
+                logger.info("file is succefully created", file.getName());
             } else {
                 file.createNewFile();
-                System.out.print("not exists");
+                logger.info("creation failed", file.getName());
             }
         } catch (IOException e) {
             e.printStackTrace();
