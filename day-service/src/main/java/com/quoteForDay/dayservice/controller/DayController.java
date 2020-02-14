@@ -35,7 +35,7 @@ public class DayController {
     public String generateQuote(Model model) {
 
         Random random = new Random();
-        int randomWithNextInt = random.nextInt(6);
+        int randomWithNextInt = random.nextInt(6)+1;
         Quote quoteId = quoteServiceClient.getQuoteById(randomWithNextInt);
         model.addAttribute("quotes", quoteId);
 
