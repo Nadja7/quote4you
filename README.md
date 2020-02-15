@@ -2,6 +2,7 @@
 
 This service provides you quotes for every day.
 Short description for each service:
+
 1.Config Server: 
 
 Spring Boot App with  provides a server support for clients  to store their configurations and manage external properties.
