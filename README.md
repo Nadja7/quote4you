@@ -30,7 +30,7 @@ Get quote with specific id.
  
 4.Day-Service:
 
-Spring Boot App which makes a API call to Quote Service using Feign Client. 
+Spring Boot App which makes a API call to Quote Service using Feign Client and print back random quote. 
 Check it out on:
 ```bash
 http://localhost:8085/
