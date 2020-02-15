@@ -93,5 +93,5 @@ docker run -e MYSQL_ROOT_PASSWORD=whatever -e MYSQL_USER=spring -e MYSQL_PASSWOR
 
 6.Run ConvertingService Application
 
-There are also try to protect Day Service anf also Converting Service using Spring @Retry and Fallback class wenn Quote Service is for some reason down.
+There are also try to protect Day Service and also Converting Service using Spring @Retry and Fallback class wenn Quote Service is for some reason down.
 In this case services will continue to  work with default values.
