@@ -79,7 +79,8 @@ http://localhost:8888/converting-service/default
 
 2.Run DiscoveryService Application
 
-To persist data we are using Docker.
+!!!To persist data we are using Docker.!!!
+
 Pull mysql docker image and run your container with following command:
 
 ```bash
