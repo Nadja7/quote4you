@@ -6,7 +6,7 @@ Short description for each service:
 1.Config Server: 
 
 Spring Boot App with  provides a server support for clients  to store their configurations and manage external properties.
-Config remote repository with all properties are here -->[quote4you-config](https://github.com/Nadja7/quote4you-config/).
+Config remote repository with all properties are here --> [quote4you-config](https://github.com/Nadja7/quote4you-config/).
 
 2.Discovery Service
 
